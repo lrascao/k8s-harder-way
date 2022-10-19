@@ -1,0 +1,16 @@
+{
+  "CN": "etcd",
+  "hosts": [""],
+  "key": {
+    "algo": "ecdsa",
+    "size": 256
+  },
+  "names": [
+    {
+      "C": "US",
+      "L": "Portland",
+      "ST": "Oregon",
+      "O": "etcd"
+    }
+  ]
+}

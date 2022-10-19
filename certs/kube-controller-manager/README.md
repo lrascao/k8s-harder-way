@@ -1,0 +1,6 @@
+cfssl gencert \
+  -ca=../CA/ca.pem \
+  -ca-key=../CA/ca-key.pem \
+  -config=../CA/ca-config.json \
+  -profile=kubernetes \
+  kube-controller-manager-csr.json | cfssljson -bare kube-controller-manager
