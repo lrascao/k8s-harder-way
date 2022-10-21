@@ -8,6 +8,6 @@ cfssl gencert \
   -ca=../CA/ca.pem \
   -ca-key=../CA/ca-key.pem \
   -config=../CA/ca-config.json \
-  -hostname=${KUBERNETES_CLUSTER_INTERNAL_ADDRESS},${KUBERNETES_PUBLIC_ADDRESS},${PRIVATE_ADDRESS},127.0.0.1,${KUBERNETES_HOSTNAMES} \
+  -hostname=${KUBERNETES_CLUSTER_INTERNAL_ADDRESS},${KUBERNETES_PUBLIC_ADDRESS},${PRIVATE_ADDRESSES},127.0.0.1,${KUBERNETES_HOSTNAMES} \
   -profile=kubernetes \
   kube-apiserver-csr.json | cfssljson -bare kube-apiserver
