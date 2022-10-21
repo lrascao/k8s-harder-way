@@ -4,6 +4,7 @@ CFSSL_VERSION=1.6.1
 ETCD_VERSION=3.5.5
 KUBERNETES_VERSION=1.25.3
 CRI_TOOLS_VERSION=1.25.0
+RUNC_VERSION=1.1.4
 
 git clone --depth=1 -b v${CFSSL_VERSION} https://github.com/cloudflare/cfssl.git src/cfssl-${CFSSL_VERSION}
 pushd src/cfssl-${CFSSL_VERSION}; make; popd; mkdir -p bin/cfssl; cp src/cfssl-${CFSSL_VERSION}/bin/* bin/cfssl
@@ -25,3 +26,5 @@ popd;
 
 git clone --depth=1 -b v${CRI_TOOLS_VERSION} https://github.com/kubernetes-sigs/cri-tools.git src/cri-tools-${CRI_TOOLS_VERSION}
 pushd src/cri-tools-${CRI_TOOLS_VERSION}; make; popd; cp src/cri-tools-${CRI_TOOLS_VERSION}/build/bin/crictl bin/kubernetes
+
+git clone --depth=1 -b v${RUNC_VERSION} https://github.com/opencontainers/runc.git src/runc-${RUNC_VERSION}
