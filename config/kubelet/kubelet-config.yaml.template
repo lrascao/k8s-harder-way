@@ -11,9 +11,9 @@ authorization:
   mode: Webhook
 clusterDomain: "cluster.local"
 clusterDNS:
-  - "10.32.0.10"
-podCIDR: "192.168.0.0/16"
+  - "%KUBERNETES_CLUSTER_DNS%"
+podCIDR: "%KUBERNETES_POD_CIDR%"
 resolvConf: "../../config/resolv/resolv.conf"
 runtimeRequestTimeout: "15m"
-tlsCertFile: "../../certs/kubelet/worker1/worker1.pem"
-tlsPrivateKeyFile: "../../certs/kubelet/worker1/worker1-key.pem"
+tlsCertFile: "../../certs/kubelet/%WORKER_NODE_NAME%/%WORKER_NODE_NAME%.pem"
+tlsPrivateKeyFile: "../../certs/kubelet/%WORKER_NODE_NAME%/%WORKER_NODE_NAME%-key.pem"

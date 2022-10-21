@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ../../../config/nodes.sh
+source ${_ROOT}/config/nodes.sh
 
 LOCALHOST=127.0.0.1 \
 ETCD_PRIVATE_ADDRESSES=${WORKER_NODE2_PRIVATE_ADDRESS} && \

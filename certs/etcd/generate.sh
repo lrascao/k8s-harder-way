@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ../../config/nodes.sh
+source ${_ROOT}/config/nodes.sh
 
 # Generate Server certificate
 LOCALHOST=127.0.0.1 \

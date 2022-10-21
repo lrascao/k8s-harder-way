@@ -4,18 +4,18 @@ for instance in worker1; do
     --certificate-authority=../../certs/CA/ca.pem \
     --embed-certs=true \
     --server=https://${KUBERNETES_PUBLIC_ADDRESS}:6443 \
-    --kubeconfig=${instance}.kubeconfig
+    --kubeconfig=${WORKER_NODE_NAME}.kubeconfig
 
   kubectl config set-credentials system:node:${instance} \
-    --client-certificate=../../certs/kubelet/${instance}/${instance}.pem \
-    --client-key=../../certs/kubelet/${instance}/${instance}-key.pem \
+    --client-certificate=../../certs/kubelet/${WORKER_NODE_NAME}/${WORKER_NODE_NAME}.pem \
+    --client-key=../../certs/kubelet/${WORKER_NODE_NAME}/${WORKER_NODE_NAME}-key.pem \
     --embed-certs=true \
-    --kubeconfig=${instance}.kubeconfig
+    --kubeconfig=${WORKER_NODE_NAME}.kubeconfig
 
   kubectl config set-context default \
     --cluster=kubernetes-the-hard-way \
     --user=system:node:${instance} \
-    --kubeconfig=${instance}.kubeconfig
+    --kubeconfig=${WORKER_NODE_NAME}.kubeconfig
 
-  kubectl config use-context default --kubeconfig=${instance}.kubeconfig
+  kubectl config use-context default --kubeconfig=${WORKER_NODE_NAME}.kubeconfig
 done

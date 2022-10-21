@@ -1,7 +1,7 @@
 #!/bin/bash
 
-source ../../config/nodes.sh
-source ../../config/kubernetes.sh
+source ${_ROOT}/config/nodes.sh
+source ${_ROOT}/config/kubernetes.sh
 
 PRIVATE_ADDRESSES=${WORKER_NODE1_PRIVATE_ADDRESS},${WORKER_NODE2_PRIVATE_ADDRESS} && \
 cfssl gencert \
